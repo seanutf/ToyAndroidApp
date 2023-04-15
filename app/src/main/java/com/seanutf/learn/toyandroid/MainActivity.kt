@@ -2,7 +2,11 @@ package com.seanutf.learn.toyandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.seanutf.learn.toyandroid.databinding.ActivityMainBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +18,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.rvList.adapter = listAdapter
         listAdapter.updateList(getListData())
+        lifecycleScope.launch {
+            flow<Boolean> {
+
+            }.collectLatest {
+
+            }
+        }
     }
 
     private fun openRouter(position: Int){
