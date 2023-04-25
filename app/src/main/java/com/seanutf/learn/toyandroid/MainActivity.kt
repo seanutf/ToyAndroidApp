@@ -18,13 +18,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.rvList.adapter = listAdapter
         listAdapter.updateList(getListData())
-        lifecycleScope.launch {
-            flow<Boolean> {
-
-            }.collectLatest {
-
-            }
-        }
     }
 
     private fun openRouter(position: Int){
