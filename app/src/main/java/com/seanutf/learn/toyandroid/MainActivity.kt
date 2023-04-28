@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.seanutf.learn.toyandroid.databinding.ActivityMainBinding
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.rvList.adapter = listAdapter
         listAdapter.updateList(getListData())
+        lifecycleScope.async {
+
+        }
     }
 
     private fun openRouter(position: Int){
